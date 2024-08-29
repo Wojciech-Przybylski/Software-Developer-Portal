@@ -1,0 +1,96 @@
+{
+    "title": "ONS Tech Radar",
+    "quadrants": [
+        {
+            "id": "1",
+            "name": "Languages"
+        },
+        {
+            "id": "2",
+            "name": "Frameworks"
+        },
+        {
+            "id": "3",
+            "name": "CI/CD"
+        },
+        {
+            "id": "4",
+            "name": "Infrastructure"
+        }
+    ],
+    "rings": [
+        {
+            "id": "adopt",
+            "name": "ADOPT",
+            "color": "#43DA00"
+        },
+        {
+            "id": "trial",
+            "name": "TRIAL",
+            "color": "#00D7A0"
+        },
+        {
+            "id": "assess",
+            "name": "ASSESS",
+            "color": "#FFBA00"
+        },
+        {
+            "id": "hold",
+            "name": "HOLD",
+            "color": "#FF1600"
+        }
+    ],
+    "entries": [
+        {
+            "id": "javascript",
+            "title": "Javascript",
+            "description": "Languages",
+            "key": "javascript",
+            "url": "#",
+            "quadrant": "1",
+            "timeline": [
+                {
+                    "moved": 0,
+                    "ringId": "adopt",
+                    "date": "2024-05-10",
+                    "description": "UI Review 2024-05-10"
+                }
+            ],
+            "links": []
+        },
+        {
+            "id": "concourse",
+            "title": "Concourse",
+            "description": "CICD",
+            "key": "concourse",
+            "url": "#",
+            "quadrant": "3",
+            "timeline": [
+                {
+                    "moved": 0,
+                    "ringId": "adopt",
+                    "date": "2024-05-10",
+                    "description": "UI Review 2024-05-10"
+                }
+            ],
+            "links": []
+        },
+        {
+            "id": "aws_fargate",
+            "title": "AWS Fargate",
+            "description": "Infrastructure",
+            "key": "aws_fargate",
+            "url": "#",
+            "quadrant": "4",
+            "timeline": [
+                {
+                    "moved": 0,
+                    "ringId": "trial",
+                    "date": "2024-05-10",
+                    "description": "UI Review 2024-05-10"
+                }
+            ],
+            "links": []
+        }
+    ]
+}
