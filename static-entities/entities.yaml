@@ -1,0 +1,27 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ons-website
+  links:
+  - url: https://ons.gov.uk
+    title: ONS Website
+    icon: search
+spec:
+  owner: digital-publishing
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: sml
+  annotations:
+    jira/project-key: SPP
+  links:
+    - url: https://statisticalmethodslibrary.ons.gov.uk
+      title: SML Website
+      icon: search
+spec:
+  owner: spp-sml
+  tags:
+    - spp
+---

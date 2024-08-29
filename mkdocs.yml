@@ -1,0 +1,37 @@
+site_name: Software Developer Portal
+repo_url: https://github.com/ONSdigital/sdp-backstage
+repo_name: Software Developer Portal
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences 
+nav:
+  - Overview: index.md
+  - Core Features: core_features.md
+  - Integrations: integrations.md
+  - Authentication And Permissions: authentication_and_permissions.md
+  - Custom Plugins: custom_plugins.md
+  - Template Actions: template_actions.md
+  - Tech Radar Customisation: tech_radar_customisation.md
+  - AWS Deployment: aws-deployment.md
+  - Tech Stack: tech_stack.md
+  - Useful Resources: useful-resources.md
+
+theme:
+  name: material
+  logo: ./assets/logo.png
+  favicon: ./assets/favicon.ico
+
+  palette:
+    - scheme: default
+      primary: 'light-green'
+      accent: 'pink'
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: 'light-green'
+      accent: 'orange'
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode

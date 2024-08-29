@@ -1,0 +1,111 @@
+app:
+  title: SDP PoC
+  baseUrl: ${BSTAGE_AWS_URL}:3000
+
+organization:
+  name: SDP PoC
+
+permission:
+  enabled: true
+
+backend:
+  # Used for enabling authentication, secret is shared by all backend plugins
+  # See https://backstage.io/docs/auth/service-to-service-auth for
+  # information on the format
+  # auth:
+  #   keys:
+  #     - secret: ${BACKEND_SECRET}
+  baseUrl: ${BSTAGE_AWS_URL}:7007
+  listen:
+    port: 7007
+  csp:
+    connect-src: ["'self'", 'http:', 'https:']
+    img-src:
+      - "'self'"
+      - 'data:'
+      - '${BSTAGE_JIRA_URL}'
+  cors:
+    origin: ${BSTAGE_AWS_URL}:3000
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+  database:
+    client: pg
+    connection:
+      host: ${BSTAGE_DATABASE_ENDPOINT}
+      port: 5432
+      user: postgres
+      password: ${BSTAGE_DATABASE_PASSWORD}
+  # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
+
+integrations:
+  github:
+    - host: github.com
+      apps:
+        - $include: credentials-example.yaml
+  aws:
+    - accountId: '${BSTAGE_AWS_ACCOUNT_ID}'
+      roleArn: '${BSTAGE_AWS_ROLE_ARN}'
+      region: '${BSTAGE_AWS_REGION}'
+  s3viewer:
+    accessKeyId: ${AWS_ACCESS_KEY_ID}
+    secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+    sessionToken: ${AWS_SESSION_TOKEN}
+
+techdocs:
+  builder: 'local' # Alternatives - 'external'
+  generator:
+    runIn: 'docker' # Alternatives - 'local'
+  publisher:
+    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+
+auth:
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: ${BSTAGE_GITHUB_CLIENT_ID}
+        clientSecret: ${BSTAGE_GITHUB_CLIENT_SECRET}
+
+scaffolder:
+  # see https://backstage.io/docs/features/software-templates/configuration for software template options
+
+catalog:
+  providers:
+    github:
+      providerId:
+        organization: '${BSTAGE_GITHUB_ORGANISATION}'
+        schedule: # optional; same options as in TaskScheduleDefinition
+          # supports cron, ISO duration, "human duration" as used in code
+          frequency: { minutes: 1 }
+          # supports ISO duration, "human duration" as used in code
+          timeout: { minutes: 3 }
+    aws:
+      accountId: '${BSTAGE_AWS_ACCOUNT_ID}'
+      roleArn: '${BSTAGE_AWS_ROLE_ARN}'
+      region: '${BSTAGE_AWS_REGION}'
+  import:
+    entityFilename: catalog-info.yaml
+    pullRequestBranchName: backstage-integration
+  rules:
+    - allow: [Component, System, API, Resource, Location, Template]
+  locations:
+    $include: ./app-static-config.yaml
+
+kubernetes:
+  serviceLocatorMethod:
+    type: 'multiTenant'
+  clusterLocatorMethods:
+    - type: 'config'
+      clusters:
+        - url: ${BSTAGE_K8S_CLUSTER_URL}
+          name: ${BSTAGE_K8S_CLUSTER_NAME}
+          authProvider: 'aws'
+          caFile: ${BSTAGE_K8S_CA_FILE_PATH} # Path to a file containing the certificate authority
+
+# for the roadieHQ aws integration
+accountId: '${BSTAGE_AWS_ACCOUNT_ID}'
+roleArn: '${BSTAGE_AWS_ROLE_ARN}'
+region: '${BSTAGE_AWS_REGION}'
+
+openai:
+  apiKey: ${BSTAGE_OPENAI_KEY}

@@ -1,0 +1,83 @@
+- type: file
+  target: ../../static-entities/entities.yaml
+
+# - type: file
+#   target: ../../static-entities/spotifyApi.yaml
+
+- type: file
+  target: ../../static-entities/addressIndexApi.yaml
+
+- type: file
+  target: ../../static-entities/dpSearchApi.yaml
+
+##################################
+# Templates                      #
+##################################
+
+# node-with-docs example template
+- type: file
+  target: ./templates/node-with-docs/template.yaml
+  rules:
+    - allow: [Template]
+
+# standalone docs example
+- type: file
+  target: ./templates/standalone-docs/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/create-react-app/template.yaml
+  rules:
+    - allow: [Template]
+
+# r project template
+- type: file
+  target: ./templates/r-project-template/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/docs-template/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/upload-to-s3/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/s3-website/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/upload-adr/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/new-community-method/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/integrate-techdocs/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/website-template/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/integrate-update-catalog-info-file/template.yaml
+  rules:
+    - allow: [Template]
+
+- type: file
+  target: ./templates/rag-gen-ai-template/template.yaml
+  rules:
+    - allow: [Template]

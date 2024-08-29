@@ -1,0 +1,86 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "16 || 18"
+  },
+  "scripts": {
+    "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
+    "start": "yarn workspace app start",
+    "start-backend": "yarn workspace backend start",
+    "build:backend": "yarn workspace backend build",
+    "build:all": "backstage-cli repo build --all",
+    "build-image": "yarn workspace backend build-image",
+    "tsc": "tsc",
+    "tsc:full": "tsc --skipLibCheck false --incremental false",
+    "clean": "backstage-cli repo clean",
+    "test": "backstage-cli repo test",
+    "test:all": "backstage-cli repo test --coverage",
+    "fix": "backstage-cli repo fix",
+    "lint": "backstage-cli repo lint --since origin/master",
+    "lint:all": "backstage-cli repo lint",
+    "prettier:check": "prettier --check .",
+    "new": "backstage-cli new --scope internal"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "plugins/*"
+    ]
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.25.2",
+    "@spotify/prettier-config": "^12.0.0",
+    "concurrently": "^8.0.0",
+    "lerna": "^4.0.0",
+    "node-gyp": "^9.0.0",
+    "prettier": "^2.3.2",
+    "typescript": "~5.2.0"
+  },
+  "resolutions": {
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "swagger-ui-react": "5.10.5",
+    "wrap-ansi": "^7.0.0"
+  },
+  "prettier": "@spotify/prettier-config",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@backstage-community/plugin-github-actions": "^0.6.20",
+    "@backstage-community/plugin-github-pull-requests-board": "^0.2.3",
+    "@backstage-community/plugin-tech-radar": "^0.7.6",
+    "@backstage/integration": "^1.13.0",
+    "@backstage/plugin-circleci": "^0.3.30",
+    "@backstage/plugin-git-release-manager": "^0.3.42",
+    "@backstage/theme": "^0.5.1",
+    "@drodil/backstage-plugin-toolbox": "^1.14.0",
+    "@k-phoen/backstage-plugin-announcements-backend": "^0.2.0",
+    "@roadiehq/backstage-plugin-github-insights": "^2.3.21",
+    "@roadiehq/backstage-plugin-github-pull-requests": "^2.5.18",
+    "@roadiehq/backstage-plugin-security-insights": "^2.3.9",
+    "@roadiehq/catalog-backend-module-aws": "^3.0.1",
+    "@types/adm-zip": "^0.5.5",
+    "@types/node-cron": "^3.0.11",
+    "@types/react": "^17",
+    "adm-zip": "^0.5.14",
+    "aws-sdk": "^2.1582.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.2",
+    "express-jwt": "^8.4.1",
+    "jwks-rsa": "^3.1.0",
+    "node-cron": "^3.0.3",
+    "react-error-boundary": "^4.0.11",
+    "react-icons": "^5.0.1",
+    "wrap-ansi": "^9.0.0"
+  }
+}
