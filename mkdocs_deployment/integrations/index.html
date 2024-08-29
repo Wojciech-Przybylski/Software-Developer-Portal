@@ -1,0 +1,854 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../core_features/">
+      
+      
+        <link rel="next" href="../authentication_and_permissions/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Integrations - Software Developer Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integrations-and-plugins" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Software Developer Portal" class="md-header__button md-logo" aria-label="Software Developer Portal" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Developer Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integrations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ONSdigital/sdp-backstage" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Software Developer Portal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Software Developer Portal" class="md-nav__button md-logo" aria-label="Software Developer Portal" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Software Developer Portal
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ONSdigital/sdp-backstage" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Software Developer Portal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jira
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Insights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#awslabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWSLabs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roadiehq" class="md-nav__link">
+    <span class="md-ellipsis">
+      RoadieHQ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chatgpt-and-ai-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChatGPT and AI queries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ChatGPT and AI queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_and_permissions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication And Permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_plugins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Plugins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template_actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_radar_customisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech Radar Customisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jira
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Insights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#awslabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWSLabs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roadiehq" class="md-nav__link">
+    <span class="md-ellipsis">
+      RoadieHQ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chatgpt-and-ai-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChatGPT and AI queries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ChatGPT and AI queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="integrations-and-plugins">Integrations and Plugins</h1>
+<p>This page documents some of the plugins and integrations that have been added to the SDP, alongside some discussion of their pros and cons.</p>
+<h2 id="github">GitHub</h2>
+<p>There are many possibilities with the GitHub integration. One notable feature is its ability to automatically import user, group, and repository information into the catalog. This eliminates the need to manually locate catalog-info.yaml files for all components, ensuring immediate visibility of any new entities in the portal.</p>
+<h3 id="authentication-and-permissions">Authentication and permissions</h3>
+<p>Currently, GitHub handles the authentication for the SDP. This allows for ownership information to be readily available, as well as handling permissions for access to repositories.</p>
+<p>The sign-in system in Backstage is not intended to limit access, only to inform the system of the identity of the user (and provide access tokens for certain integrations). Access limitation is handled by the permission framework as mentioned below.</p>
+<p>By default, Backstage endpoints are not protected, and all actions are available to anyone. However, the permission framework allows integrators to achieve this through the use of granular permissioning for those resources and actions.</p>
+<p>The SDP uses backstage's permission framework to authnticate access to specific parts of the portal, such as the tech radar or the whole application access dependand on the role based authentication attached to specific groups within the GitHub Org.</p>
+<p>Current roles are as follows:</p>
+<ul>
+<li>
+<p>Admin </p>
+<ul>
+<li>Full application access </li>
+<li>Entity creation </li>
+<li>Entity deletion</li>
+</ul>
+</li>
+<li>
+<p>Dev-Team</p>
+<ul>
+<li>Full application access </li>
+<li>Entity creation</li>
+</ul>
+</li>
+<li>
+<p>spp-sml </p>
+<ul>
+<li>Tech radar access</li>
+</ul>
+</li>
+</ul>
+<p>These roles can be changed or renamed dependant on the configuration of the SDP.</p>
+<p>for more information go to <a href="../authentication_and_permissions/">Authentication and permissions</a></p>
+<h2 id="jira">Jira</h2>
+<p>The Jira integration works by specifying a proxy in app-config.yaml in the Backstage project root. This requires a "target", which is the domain that is hosting Jira - for testing purposes, I've set up a dummy organisation at https://akira.atlassian.net/ but this would obviously be replaced by https://jira.ons.gov.uk/ in production. The application also requires an authorisation header using a token generated by the organisation; </p>
+<p>Obtain you personal token from Jira.</p>
+<p>Create a base64-encoded string by converting a string in format</p>
+<p><code>&lt;your-atlassian-account-mail&gt;:&lt;your-jira-token&gt;</code></p>
+<p>for example:</p>
+<p><code>jira-mail@example.com:hTBgqVcrcxRYpT5TCzTA9C0F</code></p>
+<p>converts to base64</p>
+<p><code>amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==</code></p>
+<p>Save it as the environmental variable JIRA_TOKEN with Basic prefix, for example:</p>
+<p><code>JIRA_TOKEN='Basic amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg=='</code></p>
+<p>Alternatively, if you are running backstage locally, you can provide the variable by the command</p>
+<p><code>env JIRA_TOKEN='Basic amlyYS1tYWlsQGV4YW1wbGUuY29tOmhUQmdxVmNyY3hSWXBUNVRDelRBOUMwRg==' yarn</code></p>
+<p>Once set up, applying the integration to software components in the catalog is as simple as marking the catalog info file with a jira/project-key annotation. This annotation should map to the key that relates to the project that the component is part of - for example, all of the SML repos would be marked with SPP .</p>
+<h2 id="github-insights">GitHub Insights</h2>
+<p>GitHub Insights plugin provides repository insights about contributors, languages, readme, and enviroments - this is the same information that you can see found directly on GitHub but it allows the user to view insights wigets for corresponding componetnts in the catalog  </p>
+<h2 id="aws">AWS</h2>
+<p>There are two main providers of AWS-Backstage plugins: AWS Apps and Roadie. These are based on the AWS SDK, which is both straightforward to install and easy to make use of. This means that a lot of the AWS functionality can reasonably be done from scratch - for a lot of our use-cases, I think this approach is best.</p>
+<p>The existing plugins are discussed below for completeness.</p>
+<h3 id="awslabs">AWSLabs</h3>
+<p>AWS themselves provide three such plugins: aws-apps-backend, aws-apps and scaffolder-backend-module-aws-apps (<a href="https://github.com/awslabs/app-development-for-backstage-io-on-aws">which are available here</a>). Most notably, these allow (among other things):</p>
+<ul>
+<li>Discovery of AWS resources as Backstage entities (such that they're visible in the Software Catalog, with a custom frontend for their pages)</li>
+<li>UI cards to monitor AWS resources from within Backstage</li>
+<li>Scaffolder actions to provision AWS resources using templates</li>
+</ul>
+<p>However, the project containing these plugins seems intended to be used as a standalone AWS management platform as opposed to integrated into an existing Backstage app.</p>
+<h3 id="roadiehq">RoadieHQ</h3>
+<p>The alternative is the Roadie-developed set of Backstage AWS plugins which appears to be more tailored towards being incorporated into an existing Backstage app. However, these have significant limitations:</p>
+<p>The range of resources that it can track is very limited - it only recognises S3 buckets, ECRs and Lambda actions.</p>
+<p>The frontend for these resources does not seem particularly mature. Aside from only providing a limited number of components, it's not present on yarn or npm, which means that you have to manually install it from source.</p>
+<p>These are useful actions, but they're very limited in scope.</p>
+<h2 id="chatgpt-and-ai-queries">ChatGPT and AI queries</h2>
+<p>The plugin developed by Enfuse offers a simple user interface for interacting with ChatGPT through OpenAI's chat completion API. Although limited on its own, functioning essentially as a basic version of the OpenAI user interface, the framework provided allowed for the creation of a chat window that enables users to query ChatGPT using information stored within Backstage's database. This provides a natural language interface for exploring Backstage.</p>
+<p>To achieve this, context retrieved from Backstage's entity catalogue database (specifically, the YAML files describing entity metadata) was injected into the system prompt, along with a directive for ChatGPT to use that context in its responses. Consequently, when users ask questions, ChatGPT can utilize the metadata to generate informed answers about Backstage's knowledge.</p>
+<h3 id="token-limitations">Token Limitations</h3>
+<p>However, the model used, ChatGPT-3.5-Turbo, has a combined token limit of 4096 tokens for both system and user prompts. This limit is insufficient to send the entire database content, even when restricted to catalog-info.yaml metadata files, necessitating a method to select the data sent to ChatGPT.</p>
+<p>OpenAI's "embeddings" API, which vectorizes text, provides a solution. By vectorizing the database items and the user query, and then comparing them using cosine similarity, a ranking from "most relevant" to "least relevant" is produced. The top N most relevant database items can then be selected as context.</p>
+<p>Despite often yielding good results, this approach has fundamental flaws. Since ChatGPT cannot access the entire database at once, it cannot accurately answer large aggregate queries (such as "how many entities are tracked in the database" or "list all entities not using Python") unless all relevant information is contained within the metadata of a small number of entities. There is no real workaround for this issue, but it might not be problematic in a production environment. For instance, the Office for National Statistics (ONS) would likely avoid sending potentially sensitive data to OpenAI, opting instead to host their own language model locally. This would eliminate the token limit issue, though other challenges such as performance and relevance with extremely large contexts might arise.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

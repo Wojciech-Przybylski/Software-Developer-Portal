@@ -1,0 +1,799 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../integrations/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Core Features - Software Developer Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#core-features" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Software Developer Portal" class="md-header__button md-logo" aria-label="Software Developer Portal" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Developer Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Core Features
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ONSdigital/sdp-backstage" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Software Developer Portal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Software Developer Portal" class="md-nav__button md-logo" aria-label="Software Developer Portal" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Software Developer Portal
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ONSdigital/sdp-backstage" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Software Developer Portal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Core Features
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Core Features
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Catalog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Templates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-repo-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Repo Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#techdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      TechDocs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      API documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-radar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tech Radar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theming-and-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theming and UI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_and_permissions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication And Permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_plugins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Plugins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template_actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_radar_customisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech Radar Customisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Catalog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Templates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-repo-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Repo Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#techdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      TechDocs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      API documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-radar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tech Radar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theming-and-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theming and UI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="core-features">Core Features</h1>
+<h2 id="software-catalog">Software Catalog</h2>
+<p>The catalog serves as a comprehensive repository for tracking various components within Backstage, which is one of its core functionality. Examples of catalog items include GitHub repositories, documentation sites, cloud resources, teams, and team members. Backstage exhibits flexibility in accommodating a wide array of components relevant to software development projects.</p>
+<p>By storing this information within Backstage, it provides a clear view of any information that might be relevant to a project. This includes how components of projects fit together, who is responsible for what, open pull requests, cloud resource health, etc. Most of the rest of Backstage revolves around this information and making clever use of it.</p>
+<p>Open-source plugins from the community can provide additional functionality to the Catalog by integrating with external services and pulling in relevant data from them. See SDP: <a href="../integrations/">Integrations</a> for some examples. </p>
+<p><img alt="catalog" src="../assets/catalog_image.png" /></p>
+<p>Catalogue entities are defined using YAML files. Typically these will reside in thier project repositories but they can also be entered directly into the database without a YAML file having to actually exist somewhere external to Backstage (this is how certain integrations automatically "discover" users into the catalogue.</p>
+<h2 id="software-templates">Software Templates</h2>
+<p>Software templates are essentially a set of instructions which tell Backstage to execute a series of actions with certain user inputs. This is a highly flexible system which can be adapted into a large range of use-cases. </p>
+<p>For example:</p>
+<ul>
+<li>
+<p>Creating a fresh repository for a Python project, with best-practice configurations already set, project structure according to standards, tests and CI already running and documentation skeleton included.</p>
+</li>
+<li>
+<p>Provisioning an S3 bucket in AWS and automatically configuring it for web hosting, then uploading a template for a website to it.</p>
+</li>
+<li>
+<p>Converting Confluence documentation into Markdown, then uploading it to a repository to be viewable within Backstage.</p>
+</li>
+</ul>
+<p>Templates are YAML files which consist of three main parts:</p>
+<ul>
+<li>
+<p>Parameters - determining the user inputs to the template. Backstage automatically produces the user input interface from these parameters.</p>
+</li>
+<li>
+<p>Steps - determining the actions the template should take based on the parameters. A set of default actions is included within Backstage - additional actions can be installed using plugins, or written yourself. </p>
+<p>See the page on writing custom template actions <a href="../template_actions/">here</a>.</p>
+<p>A typical flow could involve using fetch:template to move (and replace variables for) files into the workspace, then using a publish action to put them somewhere.</p>
+<p>Note - that templates are commonly stored alongside a "content" or "skeleton" folder, from which the files intended for templating are fetched. Alternatively, templates can also be sourced directly from a template repository using its URL. The execution of steps within templates can be made conditional based on the values of variables sourced from the parameters stage.</p>
+</li>
+<li>
+<p>Output - determining what the user should see once the actions have completed.</p>
+</li>
+</ul>
+<p>Templates, like most things in Backstage, are entities. This means that they are loaded into the catalog like anything else. However, as long as you don't need dynamic addition/removal of templates, they can reasonably be included using static configuration (manually pointed to in Backstage's app-config.yaml). Note that this is infeasible for most entities.</p>
+<p>Backstage provides some example templates, which can be found in the official <a href="https://github.com/backstage/software-templates">repository</a>. However, it appears that community-published templates are scarce, contrary to what one might expect. </p>
+<p>This scarcity suggests that the primary approach to sourcing templates is for them to be created on an as-needed basis by the internal team managing the platform. This approach is likely due to the fact that different organizations have significantly varied requirements and integrations, necessitating customized solutions.</p>
+<h3 id="automatic-repo-configuration">Automatic Repo Configuration</h3>
+<p>Since we want newly created repos to follow best practices, we want them to have configuration options like branch protection already enabled. Here's how a few of them ended up:</p>
+<ul>
+<li>
+<p>Branch protection: implemented using Scaffolder actions, only available on public repos (or repos owned by accounts with GitHub Pro).</p>
+</li>
+<li>
+<p>Security scanning: GitHub security scanning is only available for public repos, or repos on GitHub Enterprise. You can also use an alternative method using Bandit which automatically checks for security issues via GitHub Actions.</p>
+</li>
+<li>
+<p>Secret scanning: GitHub secret scanning is only available for public repos, or repos on GitHub Enterprise.</p>
+</li>
+<li>
+<p>Dependabot: The Dependabot section of the GitHub API is still in public beta; there's no endpoint for enabling Dependabot that I could find (although there are a few for interacting with it). Might be worth failing the CI checks until Dependabot is enabled?</p>
+</li>
+</ul>
+<h2 id="techdocs">TechDocs</h2>
+<p>TechDocs is Backstage's integrated documentation-as-code solution, built on top of MkDocs.</p>
+<p>The primary advantage of this approach is the seamless integration between documentation and software, making both easily accessible and maintainable. Another significant benefit is the simplicity and speed of writing documentation in Markdown, which renders in a highly presentable format.</p>
+<p><img alt="tech-docs" src="../assets/docs-image.png" /></p>
+<p>To utilize TechDocs, documentation must be written in Markdown. The backstage.io/techdocs-ref configuration must be set in app-config.yaml to point to a directory containing the documentation folder, which is named "docs" by default. Additionally, a mkdocs.yaml file must be present in the same directory to define the structure of the documentation, as detailed in the MkDocs documentation.</p>
+<p>For optimal integration, it is recommended to locate the documentation alongside the code. This enhances visibility within Backstage and encourages developers to keep the documentation up to date.</p>
+<p>In cases where a single documentation site needs to cover multiple repositories or projects (e.g., both sml-python-small and statistical-methods-library), a standalone repository may be preferable. Projects in Backstage can link to the external documentation by setting backstage.io/techdocs-ref in their respective app-config.yaml files to url:<url-to-standalone-docs-folder> instead of the default 'dir:..'.</p>
+<p>There are a few nuances to note:</p>
+<ol>
+<li>The root page must be named index.md.</li>
+<li>The integrated search bar only appears when viewing the created documentation entity, not when viewing the "docs" tab in the original entity.</li>
+</ol>
+<p>This structured approach ensures that documentation remains closely linked with the codebase, promoting better maintenance and accessibility.</p>
+<h2 id="api-documentation">API documentation</h2>
+<p>Backstage offers a plugin that provides a robust "API explorer" interface, enabling users to list endpoints, view descriptions, and even generate requests directly from within Backstage. To utilize this feature, an entity must be defined as an API in its catalog-info.yaml file, with the API definition provided under the spec.definition key. Backstage supports three formats for these definitions: OpenAPI, AsyncAPI, and GraphQL.</p>
+<p><img alt="apis" src="../assets/api-image.png" /></p>
+<h2 id="tech-radar">Tech Radar</h2>
+<p>Backstage's integrated Tech Radar allows organisation managers to outline best practices when it comes to technology adoption. By nature, this should be manually curated (assigning HOLD/ASSESS/TRIAL/ADOPT) but some aspects may be dynamically populated using information from a variety of sources. The SDP uses project data to link technologies to the projects which use them.</p>
+<p><img alt="tech Radar" src="../assets/tech-radar-image.png" /></p>
+<p>To populate the radar, data is served from a given client implementing the TechRadarApi interface - this means that you can provide your own source of data and that updating the radar does not require a change to the source of the Backstage frontend. Although complex implementations are possible, it is just as reasonable to read the radar information straight from a JSON file on disk.</p>
+<p>For further information, regarding how the tech radar is customised or how the project data is inserted into the SDP tech radar click <a href="../tech_radar_customisation/">here</a>.</p>
+<h2 id="theming-and-ui">Theming and UI</h2>
+<p>Backstage is a React app, which means that the frontend is highly customisable. There has been a small colour change using some of the ONS colours and the demo custom theme provided by Backstage. Custom themes are made by passing configuration options to a theme-creator method, where you can change any of the common colours, fonts and shapes used across the app.</p>
+<p>More advanced customisation is possible through directly editing the React source under packages/app. This provides full control over the frontend of Backstage; for example, you could add or remove elements from the sidebar, or construct a landing page for easier navigation.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

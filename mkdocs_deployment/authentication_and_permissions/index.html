@@ -1,0 +1,1230 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../integrations/">
+      
+      
+        <link rel="next" href="../custom_plugins/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Authentication And Permissions - Software Developer Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#authentication-and-permissions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Software Developer Portal" class="md-header__button md-logo" aria-label="Software Developer Portal" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Developer Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Authentication And Permissions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ONSdigital/sdp-backstage" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Software Developer Portal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Software Developer Portal" class="md-nav__button md-logo" aria-label="Software Developer Portal" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Software Developer Portal
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ONSdigital/sdp-backstage" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Software Developer Portal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Authentication And Permissions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Authentication And Permissions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Apps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caveats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organisation-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organisation permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#including-in-integrations-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Including in Integrations Config​
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-the-latest-version-of-backstage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade to the latest version of Backstage​
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-service-to-service-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable service-to-service authentication​
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrating-permission-framework-with-your-backstage-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrating permission framework with your Backstage instance​
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrating permission framework with your Backstage instance​">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-up-the-permission-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set up the permission backend​
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enable-and-test-the-permissions-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enable and test the permissions system​
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-custom-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Custom permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_plugins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Plugins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template_actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_radar_customisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech Radar Customisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Apps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caveats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organisation-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organisation permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#including-in-integrations-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Including in Integrations Config​
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-the-latest-version-of-backstage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade to the latest version of Backstage​
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-service-to-service-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable service-to-service authentication​
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrating-permission-framework-with-your-backstage-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrating permission framework with your Backstage instance​
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrating permission framework with your Backstage instance​">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-up-the-permission-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set up the permission backend​
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enable-and-test-the-permissions-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enable and test the permissions system​
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-custom-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Custom permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="authentication-and-permissions">Authentication and Permissions</h1>
+<p>This page documents steps to setup and integrate organisation authentications and permissions.</p>
+<h2 id="authentication">Authentication</h2>
+<h3 id="github-apps">GitHub Apps</h3>
+<p>Backstage can be configured to use GitHub Apps for backend authentication. This comes with advantages such as higher rate limits and that Backstage can act as an application instead of a user or bot account.</p>
+<p>It also provides a much clearer and better authorisation model as a opposed to the OAuth apps and their respective scopes.</p>
+<h3 id="caveats">Caveats</h3>
+<ul>
+<li>
+<p>This authentication method is designed for authenticating towards organization repositories, not personal repositories.</p>
+</li>
+<li>
+<p>It is not possible to have multiple Backstage GitHub Apps installed in the same GitHub organization to be managed by Backstage. Currently, the SDP does not check through all the registered GitHub Apps to determine which ones are installed for a particular repository. Only global organization installs are respected at this time.</p>
+</li>
+<li>
+<p>The created GitHub App is private by default, which is generally preferred for github.com.</p>
+</li>
+</ul>
+<h3 id="setup">Setup</h3>
+<p>A GitHub App created with the CLI will have read access by default. Additional permissions must be manually updated in the GitHub App settings on GitHub if needed.</p>
+<p>To integrate a GitHub App you can create it using these <a href="https://backstage.io/docs/integrations/github/github-apps">instructions</a>. Which will automatically link it to your backstage instance.</p>
+<p>Once the application is created it will generate a YAML file with a <code>privateKey</code> as shown below, the YAML file will be named after your GitHub app e.g <code>backstage-app-credentials.yaml</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>appId: app id
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>clientId: client id
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>clientSecret: client secret
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>webhookSecret: webhook secret
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>privateKey: |
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -----BEGIN RSA PRIVATE KEY-----
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ...Key content...
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  -----END RSA PRIVATE KEY-----
+</code></pre></div>
+<h3 id="permissions">Permissions</h3>
+<h3 id="repository-permissions">Repository permissions</h3>
+<p><img alt="repository-permissions" src="../assets/github-app-repository-permissions.png" /></p>
+<h3 id="organisation-permissions">Organisation permissions</h3>
+<p><img alt="organisation-permissions" src="../assets/github-app-organisation-permissions.png" /></p>
+<h3 id="including-in-integrations-config">Including in Integrations Config​</h3>
+<p>Once the credentials are stored in a YAML file generated by create-github-app, they can be included in the app-config.yaml under the integrations section.</p>
+<p>Please note that the credentials file is highly sensitive and should NOT be checked into any kind of version control. Instead use your preferred secure method of distributing secrets.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>integrations:
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  github:
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    - host: github.com
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>      apps:
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        - $include: example-backstage-app-credentials.yaml
+</code></pre></div>
+<h3 id="local-configuration">Local configuration</h3>
+<p>During local development, the SDP team has been utilising the 'backstage-dummy-org' GitHub Organization. This setup has provided a non-restricted, sandbox environment that allows for testing of functionality, template features, and GitHub integrations.</p>
+<p>To switch to a different configuration, modifications to app-config.yaml and catalog.ts files will be necessary, particularly in the following areas:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>#app-config.yaml
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>catalog:
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  providers:
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    github:
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>      providerId:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        organization: &#39;${BSTAGE_GITHUB_ORGANISATION}&#39; - # make sure that the env variable is changed to org you want to use 
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>#app-config.yaml
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>integrations:
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  github:
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    - host: github.com
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>      apps:
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        - $include: &#39;example-backstage-app-credentials.yaml&#39; - # make sure that the correct file is referenced here which is linked to the organisation you want to use
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">//catalog.ts </span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">githubOrgEntityProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">GithubOrgEntityProvider</span><span class="p">.</span><span class="nx">fromConfig</span><span class="p">(</span><span class="nx">env</span><span class="p">.</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;production&#39;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">orgUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/backstage-dummy-org&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="c1">// make the changes here as well to match the organisation you will be using.</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">...</span>
+</code></pre></div></p>
+<h2 id="permissions_1">Permissions</h2>
+<p>The permissions framework depends on a few other Backstage systems, which must be set up before we can dive into writing a policy.</p>
+<h3 id="upgrade-to-the-latest-version-of-backstage">Upgrade to the latest version of Backstage​</h3>
+<p>The permissions framework itself is new to Backstage and still evolving quickly. To ensure your version of Backstage has all the latest permission-related functionality, it’s important to upgrade to the latest version. The <a href="https://backstage.github.io/upgrade-helper/">Backstage upgrade helper</a> is a great tool to help ensure that you’ve made all the necessary changes during the upgrade!</p>
+<h3 id="enable-service-to-service-authentication">Enable service-to-service authentication​</h3>
+<p>Service-to-service authentication allows Backstage backend code to verify that a given request originates from elsewhere in the Backstage backend. This is useful for tasks like collation of catalog entities in the search index. This type of request shouldn’t be permissioned, so it’s important to configure this feature before trying to use the permissions framework.</p>
+<p>To set up service-to-service authentication, follow the <a href="https://backstage.io/docs/auth/service-to-service-auth">service-to-service authentication docs</a>.</p>
+<h2 id="integrating-permission-framework-with-your-backstage-instance">Integrating permission framework with your Backstage instance​</h2>
+<p><br/></p>
+<h3 id="1-set-up-the-permission-backend">1. Set up the permission backend​</h3>
+<p>The permissions framework uses a permission-backend plugin to accept authorization requests from other plugins across your Backstage instance. The Backstage backend does not include this permission backend by default, so you will need to add it:</p>
+<ol>
+<li>
+<p>Add @backstage/plugin-permission-backend as a dependency of your Backstage backend:</p>
+<div class="highlight"><pre><span></span><code># From your Backstage root directory
+yarn add --cwd packages/backend @backstage/plugin-permission-backend
+</code></pre></div>
+</li>
+<li>
+<p>Add the following to a new file, packages/backend/src/plugins/permission.ts. This adds the permission-backend router, and configures it with a very basic policy which restricts catalog entity read permission.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nx">BackstageIdentityResponse</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">IdentityClient</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@backstage/plugin-auth-node&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createRouter</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@backstage/plugin-permission-backend&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nx">AuthorizeResult</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nx">PolicyDecision</span><span class="p">,</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nx">isPermission</span><span class="p">,</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@backstage/plugin-permission-common&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nx">PermissionPolicy</span><span class="p">,</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="nx">PolicyQuery</span><span class="p">,</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@backstage/plugin-permission-node&#39;</span><span class="p">;</span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Router</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;express&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginEnvironment</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../types&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">  </span><span class="nx">catalogConditions</span><span class="p">,</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nx">createCatalogConditionalDecision</span><span class="p">,</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@backstage/plugin-catalog-backend/alpha&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="nx">catalogEntityReadPermission</span><span class="p">,</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@backstage/plugin-catalog-common/alpha&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="kd">class</span><span class="w"> </span><span class="nx">TestPermissionPolicy</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">PermissionPolicy</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">handle</span><span class="p">(</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">    </span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">PolicyQuery</span><span class="p">,</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">    </span><span class="nx">user?</span><span class="o">:</span><span class="w"> </span><span class="kt">BackstageIdentityResponse</span><span class="p">,</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">  </span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">PolicyDecision</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isPermission</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">permission</span><span class="p">,</span><span class="w"> </span><span class="nx">catalogEntityReadPermission</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">createCatalogConditionalDecision</span><span class="p">(</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">        </span><span class="nx">request</span><span class="p">.</span><span class="nx">permission</span><span class="p">,</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">        </span><span class="nx">catalogConditions</span><span class="p">.</span><span class="nx">isEntityOwner</span><span class="p">({</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">          </span><span class="nx">claims</span><span class="o">:</span><span class="w"> </span><span class="kt">user?.identity.ownershipEntityRefs</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">        </span><span class="p">}),</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">      </span><span class="p">);</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="kt">AuthorizeResult.ALLOW</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="p">}</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createPlugin</span><span class="p">(</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="w">  </span><span class="nx">env</span><span class="o">:</span><span class="w"> </span><span class="kt">PluginEnvironment</span><span class="p">,</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Router</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">createRouter</span><span class="p">({</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="w">    </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="kt">env.config</span><span class="p">,</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">    </span><span class="nx">logger</span><span class="o">:</span><span class="w"> </span><span class="kt">env.logger</span><span class="p">,</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">    </span><span class="nx">discovery</span><span class="o">:</span><span class="w"> </span><span class="kt">env.discovery</span><span class="p">,</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="w">    </span><span class="nx">policy</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">TestPermissionPolicy</span><span class="p">(),</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">    </span><span class="nx">identity</span><span class="o">:</span><span class="w"> </span><span class="kt">env.identity</span><span class="p">,</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Wire up the permission policy in packages/backend/src/index.ts. The index in the example backend shows how to do this. You’ll need to import the module from the previous step, create a plugin environment, and add the router to the express app:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">permission</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./plugins/permission&#39;</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">permissionEnv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useHotMemoize</span><span class="p">(</span><span class="nx">module</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">createEnv</span><span class="p">(</span><span class="s1">&#39;permission&#39;</span><span class="p">));</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nx">apiRouter</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/permission&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">permission</span><span class="p">(</span><span class="nx">permissionEnv</span><span class="p">));</span>
+</code></pre></div></li>
+</ol>
+<h3 id="2-enable-and-test-the-permissions-system">2. Enable and test the permissions system​</h3>
+<p>Now that the permission backend is running, it’s time to enable the permissions framework and make sure it’s working properly.</p>
+<ol>
+<li>Set the property permission.enabled to true in app-config.yaml. </li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>permission:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  enabled: true
+</code></pre></div>
+<h3 id="3-custom-permissions">3. Custom permissions</h3>
+<p>You can also customize the permissions and create your own custom permissions dependant on the application's requirements.</p>
+<p>Here's a set of custom permissions with basic read functionality which is currently being used by the SDP to restrict access to the whole application and only grant access to the tech radar dependant on which github org group you are part of. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="err">#</span><span class="nx">customPermissions</span><span class="p">.</span><span class="nx">ts</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ResourcePermission</span><span class="p">,</span><span class="w"> </span><span class="nx">createPermission</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@backstage/plugin-permission-common&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">//Permission Definitions</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="cm">/**</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="cm"> * Represents a resource permission for accessing the tech radar catalog entity.</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="cm"> */</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">fullAccess</span><span class="o">:</span><span class="w"> </span><span class="kt">ResourcePermission</span><span class="o">&lt;</span><span class="s2">&quot;catalog-entity&quot;</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createPermission</span><span class="p">({</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="cm">/**</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="cm">   * The name of the permission.</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="cm">   */</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;catalog.entity.fullAccess&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="cm">/**</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="cm">   * The attributes of the permission.</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="cm">   */</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="cm">/**</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="cm">     * The action allowed by the permission.</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="cm">     */</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;read&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">  </span><span class="cm">/**</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="cm">   * The type of the resource associated with the permission.</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="cm">   */</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">  </span><span class="nx">resourceType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;catalog-entity&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="p">});</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">techRadarAccess</span><span class="o">:</span><span class="w"> </span><span class="kt">ResourcePermission</span><span class="o">&lt;</span><span class="s2">&quot;catalog-entity&quot;</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createPermission</span><span class="p">({</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;catalog.entity.techRadarAccess&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">  </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">    </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;read&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="w">  </span><span class="nx">resourceType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;catalog-entity&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="p">});</span>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">customPermissions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">    </span><span class="nx">fullAccess</span><span class="p">,</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="w">    </span><span class="nx">techRadarAccess</span>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="p">];</span>
+</code></pre></div>
+<p>Here is how the fullAccess permissions is later used in the permission.ts</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">  </span><span class="c1">// Full Access</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isPermission</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">permission</span><span class="p">,</span><span class="w"> </span><span class="nx">fullAccess</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isPartOfGroup</span><span class="p">([</span><span class="s1">&#39;admin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;dev-team&#39;</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Allowed full access&#39;</span><span class="p">);</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="kt">AuthorizeResult.ALLOW</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Denied full access&#39;</span><span class="p">);</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="kt">AuthorizeResult.DENY</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<p>The permissions are also being declared in packages/app/src/App.tsx to check which permissions are being authenticated thus granting access to specific part of the application.</p>
+<p>like so: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">CheckPermission</span><span class="p">(</span><span class="nx">_props</span><span class="o">:</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">loading</span><span class="o">:</span><span class="w"> </span><span class="kt">loadingPermission</span><span class="p">,</span><span class="w"> </span><span class="nx">allowed</span><span class="o">:</span><span class="w"> </span><span class="kt">readAllowed</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePermission</span><span class="p">({</span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">fullAccess</span><span class="p">,</span><span class="w"> </span><span class="nx">resourceRef</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;packages/backend/src/plugins/permission.ts&#39;</span><span class="p">,});</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">displayContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&gt;&lt;</span><span class="nx">AppRouter</span><span class="o">&gt;&lt;</span><span class="nx">Root</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">routes</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Root&gt;&lt;/AppRouter&gt;&lt;/&gt;;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">loadingPermission</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">readAllowed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">       </span><span class="nx">displayContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&gt;</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">       </span><span class="o">&lt;</span><span class="nx">AppRouter</span><span class="o">&gt;&lt;</span><span class="nx">Root</span><span class="o">&gt;&lt;</span><span class="nx">WarningPanel</span><span class="w"> </span><span class="nx">severity</span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;info&#39;</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Limited Access&quot;</span><span class="w"> </span><span class="nx">message</span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;You are not authorised to have full access to the platform. For further questions and queries about the software developer portal access contact: ............&#39;</span><span class="o">/&gt;</span><span class="p">{</span><span class="nx">tech_radar</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Root&gt;&lt;/AppRouter&gt;&lt;/&gt;;</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">displayContent</span><span class="p">;</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>And in packages/app/src/components/Root/Root.tsx to restrict the navigation routes and buttons dependant on your application access permissions</p>
+<p>like so:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="nx">PropsWithChildren</span><span class="o">&lt;</span><span class="p">{}</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">allowed</span><span class="o">:</span><span class="w"> </span><span class="kt">readAllowed</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePermission</span><span class="p">({</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">fullAccess</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nx">resourceRef</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;packages/backend/src/plugins/permission.ts&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">allowed</span><span class="o">:</span><span class="w"> </span><span class="kt">readAllowed2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePermission</span><span class="p">({</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">techRadarAccess</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="nx">resourceRef</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;packages/backend/src/plugins/permission.ts&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">globalRoutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">HomeIcon</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Home&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;catalog&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">CatalogIcon</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;catalog&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Catalog&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;api-docs&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">ExtensionIcon</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;api-docs&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;APIs&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;docs&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">LibraryBooks</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;docs&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Docs&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;create&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">CreateComponentIcon</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;create&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Create...&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;announcements&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">AnnouncmentIcon</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;announcements&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Announcements&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;onboarding&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">OnboardingIcon</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;onboarding&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Onboarding&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">  </span><span class="p">];</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">techRoutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;tech-radar&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">MapIcon</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;tech-radar&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Tech Radar&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">    </span><span class="c1">// Add more tech-related routes here</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">  </span><span class="p">];</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">sidebarContent</span><span class="p">;</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">readAllowed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">    </span><span class="nx">sidebarContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">SidebarPage</span><span class="o">&gt;</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">Sidebar</span><span class="o">&gt;</span>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarLogo</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarGroup</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Search&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">SearchIcon</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;/search&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">SidebarSearchModal</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a><span class="w">          </span><span class="o">&lt;</span><span class="err">/SidebarGroup&gt;</span>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarDivider</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarGroup</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Menu&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">MenuIcon</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span><span class="o">&gt;</span>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="w">            </span><span class="p">{</span><span class="nx">globalRoutes</span><span class="p">}</span>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarDivider</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">SidebarScrollWrapper</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">techRoutes</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/SidebarScrollWrapper&gt;</span>
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a><span class="w">          </span><span class="o">&lt;</span><span class="err">/SidebarGroup&gt;</span>
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarSpace</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarDivider</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarGroup</span>
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a><span class="w">            </span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Settings&quot;</span>
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a><span class="w">            </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">UserSettingsSignInAvatar</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span>
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a><span class="w">            </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;/settings&quot;</span>
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a><span class="w">          </span><span class="o">&gt;</span>
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">SidebarSettings</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a><span class="w">          </span><span class="o">&lt;</span><span class="err">/SidebarGroup&gt;</span>
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/Sidebar&gt;</span>
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a><span class="w">        </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/SidebarPage&gt;</span>
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a><span class="w">    </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">readAllowed2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a><span class="w">    </span><span class="nx">sidebarContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">SidebarPage</span><span class="o">&gt;</span>
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">Sidebar</span><span class="o">&gt;</span>
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarLogo</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarDivider</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarGroup</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Menu&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">MenuIcon</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span><span class="o">&gt;</span>
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">SidebarDivider</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">SidebarItem</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">HomeIcon</span><span class="p">}</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Home&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">SidebarScrollWrapper</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">techRoutes</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/SidebarScrollWrapper&gt;</span>
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a><span class="w">          </span><span class="o">&lt;</span><span class="err">/SidebarGroup&gt;</span>
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarSpace</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarDivider</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">SidebarGroup</span>
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a><span class="w">            </span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Settings&quot;</span>
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a><span class="w">            </span><span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">UserSettingsSignInAvatar</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span>
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a><span class="w">            </span><span class="nx">to</span><span class="o">=</span><span class="s2">&quot;/settings&quot;</span>
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a><span class="w">          </span><span class="o">&gt;</span>
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">SidebarSettings</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a><span class="w">          </span><span class="o">&lt;</span><span class="err">/SidebarGroup&gt;</span>
+<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/Sidebar&gt;</span>
+<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a><span class="w">        </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/SidebarPage&gt;</span>
+<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a><span class="w">    </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a><span class="w">    </span><span class="nx">sidebarContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">WarningPanel</span><span class="w"> </span><span class="nx">severity</span><span class="o">=</span><span class="s1">&#39;warning&#39;</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Unauthorised Access&quot;</span><span class="w"> </span><span class="nx">message</span><span class="o">=</span><span class="s1">&#39;You are not authorised to have access to the this platform. For further questions and queries about the software developer portal access contact: ............&#39;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a><span class="w">    </span><span class="p">);</span>
+<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>
+<a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">sidebarContent</span><span class="p">;</span>
+<a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a><span class="p">}</span>
+</code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

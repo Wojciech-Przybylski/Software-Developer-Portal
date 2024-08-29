@@ -1,0 +1,1209 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../authentication_and_permissions/">
+      
+      
+        <link rel="next" href="../template_actions/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Custom Plugins - Software Developer Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#custom-plugins" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Software Developer Portal" class="md-header__button md-logo" aria-label="Software Developer Portal" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Developer Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Custom Plugins
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ONSdigital/sdp-backstage" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Software Developer Portal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Software Developer Portal" class="md-nav__button md-logo" aria-label="Software Developer Portal" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Software Developer Portal
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ONSdigital/sdp-backstage" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Software Developer Portal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_and_permissions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication And Permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Custom Plugins
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Custom Plugins
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-plugin-library-package-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Plugin Library Package Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins-developed-for-the-sdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugins developed for the SDP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-s3-bucket-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS S3 Bucket Plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS S3 Bucket Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imports-and-interface-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports and Interface Definition:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#router-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Router Creation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-sdk-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS SDK Configuration:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-check-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Check Endpoint:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucket-data-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bucket Data Functions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associating-aws-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Associating AWS Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-ui-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend UI development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3-association-with-catalog-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      S3 association with catalog component
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-releases-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Releases Plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub Releases Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imports-and-router-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports and Router Setup:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface Definition:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release Interface:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#router-creation-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Router Creation Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-app-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub App Authentication:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-token-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Token Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-releases-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch Releases Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-ui-development_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend UI development
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template_actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_radar_customisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech Radar Customisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-plugin-library-package-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Plugin Library Package Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins-developed-for-the-sdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugins developed for the SDP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-s3-bucket-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS S3 Bucket Plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS S3 Bucket Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imports-and-interface-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports and Interface Definition:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#router-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Router Creation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-sdk-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS SDK Configuration:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-check-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Check Endpoint:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucket-data-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bucket Data Functions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associating-aws-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Associating AWS Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-ui-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend UI development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3-association-with-catalog-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      S3 association with catalog component
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-releases-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Releases Plugin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub Releases Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imports-and-router-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports and Router Setup:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface Definition:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release Interface:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#router-creation-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Router Creation Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-app-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub App Authentication:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-token-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Token Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-releases-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch Releases Function:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-ui-development_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend UI development
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="custom-plugins">Custom Plugins</h1>
+<p>This part of the documentation will cover creation of a basic backstage plugin and plugins that have been developed and are currently used by the SDP.</p>
+<h2 id="create-a-plugin">Create a Plugin</h2>
+<p>To create a new frontend plugin, make sure you've run <code>yarn install</code> and installed dependencies, then run the following on your command line (a shortcut to invoking the backstage-cli new --select plugin) from the root of your project.</p>
+<p><code>yarn new --select plugin</code></p>
+<p><img alt="plugin creation" src="https://backstage.io/assets/images/create-plugin_output-9d6c4192d058ed85c75109a4d907eae6.png" /></p>
+<p>This will create a new basic front end Backstage Plugin template based on the ID that was provided. It will be built and added to the Backstage App automatically. From here you are able to develop the plugin in any way you want.</p>
+<h3 id="other-plugin-library-package-types">Other Plugin Library Package Types</h3>
+<p>There are other plugin library package types that you can chose from. To be able to select the type when you create a new plugin just run: <code>yarn new</code>. You'll then be asked what type of plugin you wish to create like this:</p>
+<p><img alt="other plugins" src="https://backstage.io/assets/images/create-plugin_types-2c8d6c727852165df842b66829998386.png" /></p>
+<p>For a more extenisve documentation on plugin development in backstage click this <a href="https://backstage.io/docs/plugins/">link</a>.</p>
+<h2 id="plugins-developed-for-the-sdp">Plugins developed for the SDP</h2>
+<h2 id="aws-s3-bucket-plugin">AWS S3 Bucket Plugin</h2>
+<p>This plugin was developed to display associated S3 buckets with the catalog component.</p>
+<p><img alt="S3 Plugin" src="../assets/s3-plugin-image.png" /></p>
+<p>The plugin was created using the yarn create command to template basic plugin environments for both the front-end and the backend.</p>
+<p>For the initial setup to connect the front-end and backend, the development followed this <a href="https://john-tucker.medium.com/backstage-plugins-by-example-part-1-a4737e21d256">tutorial</a>.</p>
+<p>The primary development of the plugin was conducted in the routes.ts file in the backend, utilizing the AWS SDK to retrieve the necessary information from the associated AWS account.</p>
+<p>The code in route.ts sets up an Express router to interact with AWS S3, enabling the retrieval of various bucket-related data. </p>
+<p>Here's a concise summary:</p>
+<h3 id="imports-and-interface-definition">Imports and Interface Definition:</h3>
+<p>Imports express, winston (for logging), @backstage/config (for configuration), and aws-sdk.
+Defines RouterOptions interface including config and logger.</p>
+<h3 id="router-creation">Router Creation:</h3>
+<p>createRouter function initializes AWS SDK with credentials and region from the configuration.
+Creates an S3 client instance.
+Sets up an Express router with a /health endpoint to fetch and return bucket data.</p>
+<h3 id="aws-sdk-configuration">AWS SDK Configuration:</h3>
+<p>Configures AWS SDK using credentials (accessKeyId, secretAccessKey) and region specified in the configuration file.</p>
+<h3 id="health-check-endpoint">Health Check Endpoint:</h3>
+<p>Defines a /health endpoint that fetches and responds with bucket data.
+Logs errors and returns a server error response if data fetching fails.</p>
+<h3 id="bucket-data-functions">Bucket Data Functions:</h3>
+<p>Asynchronous functions fetch specific S3 bucket data:</p>
+<ul>
+<li>getBucketRegions: Retrieves bucket regions.</li>
+<li>getBucketVersioningStatus: Checks versioning status.</li>
+<li>getBucketObjects: Lists objects.</li>
+<li>getBucketTags: Fetches tags.</li>
+<li>isBucketPublic: Determines public accessibility.</li>
+<li>getBucketSize: Calculates total object size.</li>
+<li>getCreationDate: Gets creation dates.</li>
+<li>getBucketEncryptionStatus: Checks encryption status.</li>
+<li>getBucketEncryption: Retrieves encryption types.</li>
+</ul>
+<p>Fetching All Bucket Data:</p>
+<ul>
+<li>fetchBucketData function combines results from Bucket Data functions to provide comprehensive bucket data.</li>
+</ul>
+<h3 id="associating-aws-account">Associating AWS Account</h3>
+<p>To associate an AWS account with the portal and the S3 viewer plugin, a new integration was added to app-config.yaml as shown below:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>integrations:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  s3viewer:
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    accessKeyId: ${AWS_ACCESS_KEY_ID}
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    sessionToken: ${AWS_SESSION_TOKEN}
+</code></pre></div>
+<p>The IDs and secrets are subsequently pulled and applied to the AWS configuration to ensure that the plugin obtains the required account information to associate the AWS account.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  AWS.config.update({
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    region: &#39;eu-west-2&#39;,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    apiVersion: &#39;latest&#39;,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    accessKeyId: config.getString(&#39;integrations.s3viewer.accessKeyId&#39;),
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    secretAccessKey: config.getString(&#39;integrations.s3viewer.secretAccessKey&#39;),
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  });
+</code></pre></div>
+<h3 id="frontend-ui-development">Frontend UI development</h3>
+<p>Once the backend development was finalized, the focus shifted to the frontend development. The primary objectives were to ensure that the frontend plugin could successfully make API calls to the backend, retrieve all necessary data, and generate a user interface to display this data effectively.</p>
+<p>The frontend implementation involved the following key tasks:</p>
+<ul>
+<li>
+<p>API Integration: Establishing a robust mechanism for the frontend plugin to communicate with the backend API, ensuring reliable data retrieval.</p>
+</li>
+<li>
+<p>Data Handling: Efficiently processing and managing the data received from the backend to prepare it for presentation.</p>
+</li>
+<li>
+<p>UI Development: Designing and developing a user-friendly interface to display the data. This involved using backstage's Material-UI components to create a custom component called 'Tab' which aligned with the overall design principles of the application.</p>
+</li>
+</ul>
+<h3 id="s3-association-with-catalog-component">S3 association with catalog component</h3>
+<p>The S3 reasurces can be associated with a component by using the resource names in the component's catalog-info.yaml file located in its repository and inputing them under the cloud/bucket annotation, like so: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># example
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>apiVersion: backstage.io/v1alpha1
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>kind: Component
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>metadata:
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  name: Software-Developer-Portal
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  description: Software Developer Portal
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  annotations:
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    jira/project-key: SPP
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    github.com/project-slug: ONS-Innovation/Software-Developer-Portal
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  tags:
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    - app
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    - spp
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>///
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>cloud:
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    provider: &quot;AWS&quot;
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    buckets: demowebsite7861, cf-templates-p13wahha5ywe-eu-west-2, dstdemowebsite129922
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>///
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>spec:
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  type: app
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>  lifecycle: production
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  owner: user:default/wojciechp-ons
+</code></pre></div>
+<p>Note: the provider is set to 'AWS' for the time being as this is a PoC plugin and for further development it could include other providers such as GCP and Azure.</p>
+<h2 id="github-releases-plugin">GitHub Releases Plugin</h2>
+<p>This plugin was developed to display catalog component's github repository releases. </p>
+<p><img alt="Releases Plugin" src="../assets/releases-plugin-image.png" /></p>
+<p>The plugin was created using the yarn create command to template basic plugin environments for both the front-end and the backend.</p>
+<p>For the initial setup to connect the front-end and backend, the development followed this <a href="https://john-tucker.medium.com/backstage-plugins-by-example-part-1-a4737e21d256">tutorial</a>.</p>
+<p>The primary development of the plugin was conducted in the routes.ts file in the backend, utilizing the Github's API to retrieve the necessary information from the associated repositories.</p>
+<p>The backend plugin sets up an Express router to interact with GitHub's API to fetch release data from repositories. </p>
+<p>Here's a concise summary for it:</p>
+<h3 id="imports-and-router-setup">Imports and Router Setup:</h3>
+<p>Imports express, @backstage/config, @octokit/auth-app, and @octokit/request.
+Creates an Express router instance.</p>
+<h3 id="interface-definition">Interface Definition:</h3>
+<p>Defines RouterOptions interface containing a simplified logger and a configuration object.</p>
+<h3 id="release-interface">Release Interface:</h3>
+<p>Defines Release interface to structure release data.</p>
+<h3 id="router-creation-function">Router Creation Function:</h3>
+<p>createRouter function sets up a /health endpoint.</p>
+<p>The endpoint requires repository and owner query parameters.</p>
+<p>Logs the request and validates parameters.</p>
+<p>Calls fetchReleases to get release data and responds with the data or an error message.</p>
+<h3 id="github-app-authentication">GitHub App Authentication:</h3>
+<p>Configures GitHub App authentication using createAppAuth with credentials from environment variables.</p>
+<h3 id="access-token-function">Access Token Function:</h3>
+<p>getInstallationAccessToken function retrieves an installation access token using the GitHub App credentials.</p>
+<p>Calls getInstallationId to fetch the installation ID from environment variables.</p>
+<h3 id="fetch-releases-function">Fetch Releases Function:</h3>
+<p>fetchReleases function fetches release data from a specified GitHub repository.</p>
+<p>Uses the access token for authenticated requests.</p>
+<p>Fetches the latest tags and commit messages for each release.</p>
+<p>Logs relevant information and errors.</p>
+<h3 id="environment-variables">Environment Variables:</h3>
+<p>Requires the following environment variables:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>GITHUB_APP_ID
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>GITHUB_APP_PRIVATE_KEY
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>GITHUB_APP_CLIENT_ID
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>GITHUB_APP_CLIENT_SECRET
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>GITHUB_APP_INSTALLATION_ID
+</code></pre></div>
+<p>These environment variables are associated with the GitHub App credentials.</p>
+<h3 id="repository-parameters">Repository Parameters:</h3>
+<p>The repository parameters are retrieved using a hook in the front end plugin 'useReleasesObjects.ts' </p>
+<ul>
+<li>repositoryName</li>
+</ul>
+<p><code>const repositoryName = entity?.metadata?.name;</code> </p>
+<p>fetches the repositoryName parameter from the entity's catalog-info.yaml located in its repository.</p>
+<ul>
+<li>ownerName</li>
+</ul>
+<p><code>const ownerName = "ONSDigital"</code></p>
+<p>the ownerName parameter is currently hard-coded as 'ONSDigital' due to the SDP not being deployed in the ONSDigital org as of yet and it allows to showcase the potenital of the PoC, once the app is deployed in ONSDigital there is an available piece of code to replace the current workaround:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>// Use the following code to extract the owner name from the project slug annotation
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  // const projectSlug = entity?.metadata?.annotations?.[&#39;github.com/project-slug&#39;];
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  // const ownerName = projectSlug ? projectSlug.split(&#39;/&#39;)[0] : undefined;
+</code></pre></div>
+<h3 id="frontend-ui-development_1">Frontend UI development</h3>
+<p>Once the backend development was finalized, the focus shifted to the frontend development. The primary objectives were to ensure that the frontend plugin could successfully make API calls to the backend, retrieve all necessary data, and generate a user interface to display this data effectively.</p>
+<p>The frontend implementation involved the following key tasks:</p>
+<ul>
+<li>
+<p>API Integration: Establishing a robust mechanism for the frontend plugin to communicate with the backend API, ensuring reliable data retrieval.</p>
+</li>
+<li>
+<p>Data Handling: Efficiently processing and managing the data received from the backend to prepare it for presentation.</p>
+</li>
+<li>
+<p>UI Development: Designing and developing a user-friendly interface to display the data. This involved using backstage's Material-UI components to create a custom component called 'card' which aligned with the overall design principles of the application.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
