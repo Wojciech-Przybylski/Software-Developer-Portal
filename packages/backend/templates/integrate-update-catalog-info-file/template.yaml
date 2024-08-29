@@ -1,0 +1,160 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: integrate-update-catalog-info-file
+  title: Integrate or update catalog-info file
+  description: Creates/updates information of a catalog-info.yaml file
+spec:
+  owner: wojciechp-ons
+  type: utility
+  parameters:
+    - title: Insert catalog-info.yaml file information
+      required:
+      - name
+      - owner
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Name of the component
+          ui:autofocus: true
+        kind:
+          title: Select kind
+          type: string
+          description: "Select the kind of entity: Component (individual pieces of software), API, Resources (physical or virtual infrastructure needed to operate a component)"
+          default: Component
+          enum:
+            - Component
+            - Resource
+            - API
+          enumNames:
+            - 'Component'
+            - 'Resource'
+            - 'API'
+        description:
+          title: Description
+          type: string
+          description: Short description of the component.
+        languageTags:
+          title: Languages (tags)
+          type: string
+          description: "Provide a comma separated list of the main software languages used to implement the functionality. E.g: python,java,scala (use lowercase)"
+          pattern: ^[a-z0-9-_,\s]+$
+        projectTags:
+          title: Associated Project and/or ONS Division/Team (tags)
+          type: string
+          description: "Provide a comma separated list of the project acronym and the responsible ONS division or team.  E.g: irex,catd spp,processing_data_management (use lowercase)"
+          pattern: ^[a-z0-9-_,\s]+$
+        type:
+          title: Component Type
+          type: string
+          description: "One of:  service (a backend service, typically exposing an API), website (a website), library (a software library, such as an npm module or a Java library), Other"
+          default: service
+          enum:
+            - service
+            - website
+            - library
+            - other
+          enumNames:
+            - 'service'
+            - 'website'
+            - 'library'
+            - 'other'
+        lifecycle:
+          title: Lifecycle
+          type: string
+          description: "One of: experimental (can be used for any solution that has not matured to production status i.e PoCs or in-development) , production or deprecated."
+          default: production
+          enum:
+            - experimental
+            - production
+            - deprecated
+          enumNames:
+            - 'experimental'
+            - 'production'
+            - 'deprecated'
+        supportingDocsUrl:
+          title: Supporting Documentation
+          type: string
+          description: (This can be a link to README, Confluence, Sharepoint or any URL where further information can be found for this component)
+        buildDocsUrl:
+          title: Build Documentation
+          type: string
+          description: (This can be a link to a README, Confluence, Sharepoint or other information which outlines how to build this software)
+        deployDocsUrl:
+          title: Deployment Documentation
+          type: string
+          description: (This can be a link to a README, Confluence, Sharepoint or other information which outlines how to deploy this software)
+        releaseUrl:
+          title: Release
+          type: string
+          description: (This can be a link to a GitHub release, Confluence, Sharepoint or other information which outlines the latest version of the components that has been released)
+        owner:
+          title: Owner
+          type: string
+          description: "Provide the GitHub team responsible for maintaining the component. E.g spp-sml"
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+    - title: Choose a target repository
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+########################################################
+  steps:
+    - id: transformTags
+      name: Transforming tags
+      action: ons:tags:transform
+      input:
+        languageTags: ${{ parameters.languageTags }}
+        projectTags: ${{ parameters.projectTags }}
+
+    - id: transformLinks
+      name: Transforming links
+      action: ons:links:transform
+      input:
+        supportingDocsUrl: ${{ parameters.supportingDocsUrl }}
+        buildDocsUrl: ${{ parameters.buildDocsUrl }}
+        deployDocsUrl: ${{ parameters.deployDocsUrl }}
+        releaseUrl: ${{ parameters.releaseUrl }}
+
+    - id: fetch
+      name: Writting/updating catalog-info.yaml file
+      action: catalog:write
+      input:
+        entity:
+          apiVersion: backstage.io/v1alpha1
+          kind: ${{ parameters.kind }}
+          metadata:
+            name: ${{ parameters.name }}
+            description: ${{ parameters.description }}
+            annotations:
+              github.com/project-slug: ${{ parameters.repoUrl }}
+            tags: ${{ steps.transformTags.output.tags }}
+            links: ${{ steps.transformLinks.output.links }}
+          spec:
+            type: ${{ parameters.type }}
+            lifecycle: ${{ parameters.lifecycle }}
+            owner: ${{ parameters.owner }}
+    - id: publish
+      name: Publishing file to GitHub
+      action: publish:github:pull-request
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        title: "Create/update catalog-info.yaml file"
+        branchName: "create-update-catalog-info.yaml-file"
+        description: "See title."
+
+########################################################
+  output:
+    links:
+      - url: ${{steps.publish.output.remoteUrl}}
+        title: "Go to PR"

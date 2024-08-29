@@ -1,0 +1,133 @@
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: website-project
+  title: Website project template
+  description: "Set up a new static web project using Flask, automatically hosted on S3"
+  tags:
+    - flask
+    - website
+    - s3
+
+spec:
+  owner: spp-sml
+  type: service  
+  parameters:
+    - title: Name the project
+      required:
+        - name
+      properties:
+        name:
+          title: Project name
+          type: string
+          description: A human-readable name for the project.
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+    - title: Name the repo to store the source in (or choose an existing empty one).
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+    - title: Set up the bucket
+      required: 
+        - bucket
+      properties:
+        bucket:
+          title: Bucket name
+          type: string
+          description: Remember that S3 buckets are globally namespaced! Pick something unique.
+        acl:
+          title: Access
+          type: string
+          description: The Access Control List value.
+          default: private
+          enum:
+            - private
+            - public-read
+            - public-read-write
+            - authenticated-read
+
+########################################################
+
+  steps:
+    - id: template
+      name: Templating website content from filesystem
+      action: fetch:template
+      input:
+        url: ./content
+        copyWithoutRender:
+          - .github/workflows/*
+          - static_website_builder/*
+          - static_website_builder/templates/*
+        values:
+          name: ${{ parameters.name }}
+          destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          owner: ${{ parameters.owner }}
+
+    - id: publish
+      name: Publishing to GitHub
+      action: publish:github
+      input:
+        allowedHosts:
+          - github.com
+        description: ${{ parameters.description }}
+        repoUrl: ${{ parameters.repoUrl }}
+
+    - id: getBuildFolder
+      name: Getting the build folder from GitHub Actions (this might take a while!)
+      action: ons:github:getBuildArtifact
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+
+    - id: createBucket
+      name: Creating a new S3 bucket
+      action: ons:aws:s3:create
+      input:
+        bucket: ${{ parameters.bucket }}
+
+    - id: enableWebsite
+      name: Configuring the bucket for web hosting
+      action: ons:aws:s3:enableWebsite
+      input:
+        bucket: ${{ parameters.bucket }}
+
+    - id: uploadToS3
+      name: Uploading build folder to the bucket
+      action: ons:aws:s3:cpHtml
+      input:
+        region: eu-west-2
+        bucket: ${{ parameters.bucket }}
+        path: ./build
+        flatten: true
+
+    - id: runS3Provider
+      name: Refreshing S3 catalog information from AWS
+      action: ons:aws:s3:runProvider
+
+    - id: refresh
+      name: Updating catalog entities
+      action: ons:github:runProviders
+
+########################################################
+
+  output:
+    links:
+      - title: View S3 bucket
+        url: https://s3.console.aws.amazon.com/s3/buckets/${{ parameters.bucket }}
+        icon: search
+      - title: Go to website
+        url: http://${{ parameters.bucket }}.s3.eu-west-2.amazonaws.com/index.html
+        icon: search

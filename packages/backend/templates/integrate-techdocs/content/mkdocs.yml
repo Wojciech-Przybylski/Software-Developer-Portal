@@ -1,0 +1,7 @@
+site_name: ${{ values.name }}
+site_description: ${{ values.description }}
+docs_dir: ${{ values.docsDir }}
+nav:
+  ${{ values.structure }}
+plugins:
+  - techdocs-core

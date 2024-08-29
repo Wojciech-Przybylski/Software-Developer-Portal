@@ -1,0 +1,87 @@
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: s3-website
+  title: Host a static website on S3
+  description: "Create a new S3 bucket, configure it for static web hosting and upload the content."
+spec:
+  owner: akiralane
+  type: service
+
+  parameters:
+    - title: Set up the bucket
+      required: 
+        - bucket
+      properties:
+        bucket:
+          title: Bucket
+          type: string
+          description: Remember that S3 buckets are globally namespaced! Pick something unique.
+        acl:
+          title: Access
+          type: string
+          description: The Access Control List value.
+          default: private
+          enum:
+            - private
+            - public-read
+            - public-read-write
+            - authenticated-read
+
+########################################################
+
+  steps:
+    - id: fetch
+      name: Fetching content from filesystem
+      action: fetch:plain
+      input:
+        url: ./content
+
+    - id: createBucket
+      name: Creating a new S3 bucket
+      action: ons:aws:s3:create
+      input:
+        bucket: ${{ parameters.bucket }}
+
+    - id: enableWebsite
+      name: Configuring the bucket for web hosting
+      action: ons:aws:s3:enableWebsite
+      input:
+        bucket: ${{ parameters.bucket }}
+
+    - id: uploadToS3
+      name: Uploading to the bucket
+      action: ons:aws:s3:cpHtml
+      input:
+        region: us-east-1
+        bucket: ${{ parameters.bucket }}
+
+    - id: runS3Provider
+      name: Refreshing S3 catalog information from AWS
+      action: ons:aws:s3:runProvider
+
+    # - id: fetchS3
+    #   name: Fetching bucket entity from catalog
+    #   action: catalog:fetch
+    #   input:
+    #     entityRef: default/${{ entityRef }}
+
+    # - id: updateS3Metadata
+    #   name: Populating catalog entity with web metadata
+    #   action: catalog:write
+    #   input: # urgh catalog:write doesn't do what I thought it would
+    #   # then the best solution would be to reconfigure the provider to populate that data automatically
+    #   # but because it's a plugin, my changes wouldn't persist
+    #   # hmm.....
+
+########################################################
+
+  output:
+    links:
+      - title: View ${{ parameters.bucket }}
+        url: https://s3.console.aws.amazon.com/s3/buckets/${{ parameters.bucket }}
+        icon: search
+      - title: Go to website
+        url: http://${{ parameters.bucket }}.s3-website-us-east-1.amazonaws.com/
+        icon: search

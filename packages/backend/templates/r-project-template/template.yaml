@@ -1,0 +1,94 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: R-project-template
+  title: R project template
+  description: "Set up a basic 'hello world' project"
+  tags:
+    - r
+    - spp
+spec:
+  owner: spp-sml
+  type: service
+  parameters:
+    - title: Name of the project
+      required:
+        - name
+        - owner
+      properties:
+        name:
+          title: Display name
+          type: string
+          description: The human-readable name of the method.
+          ui:autofocus: true
+          pattern: '^[a-zA-Z0-9_]+$'
+        description:
+          title: Description
+          type: string
+          description: A quick description of what this method is about.
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+    - title: Name the repo to create (or choose an existing empty one).
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+  steps:
+    - action: fetch:template
+      id: fetch-template
+      name: Fetch Template
+      input:
+        targetPath: .
+        url: https://github.com/backstage-dummy-org/Project-Test/tree/master # path to your template repo
+        values:
+          name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
+          destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          owner: ${{ parameters.owner }}
+
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.name }}
+        repoUrl: ${{ parameters.repoUrl }}
+        repoVisibility: 'public'
+        defaultBranch: 'main'
+        protectDefaultBranch: true	
+
+    - id: branchProtect
+      name: Enabling branch protection and disallowing force pushes to main
+      action: ons:github:createRuleset
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+
+    - id: secretScanning
+      name: Enabling secret scanning
+      action: ons:github:enableSecretScanning
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+
+    - id: refresh
+      name: Updating catalog entities
+      action: ons:github:runProviders
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps.register.output.entityRef }}

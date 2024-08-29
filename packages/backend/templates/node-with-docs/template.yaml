@@ -1,0 +1,95 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: node-with-docs
+  title: Node project with documentation skeleton
+  description: Create a Node.js service, optionally generating a TechDocs skeleton
+spec:
+  owner: user:akiralane
+  type: service
+
+  parameters:
+    - title: Describe the project
+      required:
+        - name
+        - owner
+      properties:
+        name:
+          title: Name
+          type: string
+          description: The unique name of the component in the catalog. No spaces!
+          ui:autofocus: true
+          pattern: '^[a-zA-Z0-9-_]+$'
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+        description:
+          title: Description
+          type: string
+          description: Briefly describe the project.
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            catalogFilter:
+              kind: Group
+            allowedHosts:
+              - github.com
+    - title: Documentation
+      properties:
+        shouldTemplateDocs:
+          title: Generate TechDocs skeleton?
+          type: boolean
+
+########################################################
+
+  steps:
+    - id: fetch
+      if: ${{ parameters.shouldTemplateDocs }}
+      name: Template Docs Skeleton
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
+          destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          owner: ${{ parameters.owner }}
+
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.name }}
+        repoUrl: ${{ parameters.repoUrl }}
+        repoVisibility: 'public'
+        defaultBranch: 'main'
+        protectDefaultBranch: true	
+
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+########################################################
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}

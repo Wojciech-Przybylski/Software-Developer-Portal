@@ -1,0 +1,115 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: new-community-method
+  title: New community method (Python)
+  description: Create a Python project for a new community method
+  tags:
+    - python
+    - spp
+
+############################################################
+
+spec:
+  owner: user:akiralane
+  type: service
+  parameters:
+    - title: Describe the method
+      required:
+        - displayName
+        - name
+        - owner
+      properties:
+        displayName:
+          title: Display name
+          type: string
+          description: The human-readable name of the method.
+          ui:autofocus: true
+        name:
+          title: id
+          type: string
+          description: A unique alphanumeric name for the method, used to refer to it in code and in Backstage. Use snake_case or camelCase!
+          pattern: '^[a-zA-Z0-9_]+$'
+        description:
+          title: Description
+          type: string
+          description: A quick description of what this method is about.
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+    - title: Name the repo to create (or choose an existing empty one).
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+############################################################
+
+  steps:
+
+    - id: template
+      name: Templating method skeleton
+      action: fetch:template
+      input:
+        url: https://github.com/ONSdigital/sml-python-method-template
+        copyWithoutRender:
+          - .github/workflows/*
+
+    - id: template catalog
+      name: Templating caalog
+      action: fetch:template
+      input:
+        url: ./content
+        copyWithoutRender:
+          - .github/workflows/*
+        values:
+          name: ${{ parameters.name }}
+          displayName: ${{ parameters.displayName }}
+          description: ${{ parameters.description }}
+          destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          owner: ${{ parameters.owner }}
+
+    - id: publish
+      name: Publishing to GitHub
+      action: publish:github
+      input:
+        allowedHosts:
+          - github.com
+        description: ${{ parameters.description }}
+        repoUrl: ${{ parameters.repoUrl }}
+        repoVisibility: 'public'
+        defaultBranch: 'main'
+        protectDefaultBranch: true	
+        access: backstage-dummy-org/spp-sml
+
+    - id: secretScanning
+      name: Enabling secret scanning
+      action: ons:github:enableSecretScanning
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+
+    # Using the "catalog:register" action can result in an orphaned repo when the underlying repo is eventually deleted,
+    # since it has a location independent of the entity providers. Instead, we rely on the providers to discover the entity
+    # (sacrificing the "open in catalog" button).
+    - id: refresh
+      name: Updating catalog entities
+      action: ons:github:runProviders
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps.register.output.entityRef }}

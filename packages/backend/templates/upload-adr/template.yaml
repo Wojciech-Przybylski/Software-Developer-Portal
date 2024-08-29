@@ -1,0 +1,108 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: upload-adr
+  title: Create a new ADR
+  description: Creates a new ADR document and uploads it to GitHub.
+spec:
+  owner: backstage/techdocs-core
+  type: service
+
+  parameters:
+    - title: Describe the ADR
+      required:
+        - title
+      properties:
+        title:
+          title: Title
+          type: string
+          description: What was this decision about?
+          ui:autofocus: true
+        status:
+          title: Status
+          type: string
+          description: What's the status - proposed, accepted, rejected, deprecated, superseded, etc.?
+          ui:widget: textarea
+          ui:options:
+            rows: 3
+        context:
+          title: Context
+          type: string
+          description: What is the issue that we're seeing that is motivating this decision or change?
+          ui:widget: textarea
+          ui:options:
+            rows: 3
+        decision:
+          title: Decision
+          type: string
+          description: What is the proposed change?
+          ui:widget: textarea
+          ui:options:
+            rows: 3
+        consequences:
+          title: Consequences
+          type: string
+          description: What is the expected result of this decision?
+          ui:widget: textarea
+          ui:options:
+            rows: 3
+    - title: Integrate with TechDocs?
+      properties:
+        shouldIntegrateTechDocs:
+          title: Integrate with techdocs
+          type: boolean
+          description: Whether this template should amend a MkDocs file or just upload raw Markdown
+
+    - title: Choose a target repository
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+########################################################
+
+  steps:
+
+    - id: integrate_techdocs
+      if: ${{ parameters.shouldIntegrateTechDocs }}
+      name: Editing MkDocs for TechDocs integration
+      action: ons:github:mkdocs:update
+      input:
+        documentTitle: ${{ parameters.title }}
+        documentName: ${{ parameters.title }}.md
+        repoUrl: ${{ parameters.repoUrl }}
+
+    - id: fetch
+      name: Fetching and templating ADR skeleton
+      action: fetch:template
+      input:
+        url: ./content/
+        values:
+          title: ${{ parameters.title }}
+          status: ${{ parameters.status }} 
+          context: ${{ parameters.context }}
+          decision: ${{ parameters.decision }}
+          consequences: ${{ parameters.consequences }}
+          docsDir: ${{ steps['integrate_techdocs'].output.docsDir if steps['integrate_techdocs'].output.docsDir else "ADR" }}
+
+    - id: publish
+      name: Publishing workspace to GitHub
+      action: publish:github:pull-request
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        title: "Create ADR: ${{parameters.title}}"
+        branchName: create-adr-${{parameters.title}}
+        description: "See title."
+
+########################################################
+
+  output:
+    links:
+      - url: ${{steps.publish.output.remoteUrl}}
+        title: "Go to PR"

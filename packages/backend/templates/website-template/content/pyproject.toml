@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "sdp-static-website-template"
+version = "0.1.0"
+description = ""
+authors = ["sanjeevz3009 <sanjeevz1717@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^2.3.3"
+frozen-flask = "^0.18"
+flake8 = "^6.1.0"
+pylint = "^2.17.5"
+bandit = "^1.7.5"
+black = "^23.7.0"
+markdown = "^3.4.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

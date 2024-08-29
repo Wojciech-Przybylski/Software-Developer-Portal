@@ -1,0 +1,85 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: integrate-techdocs
+  title: Integrate TechDocs into an existing repo
+  description: "Sets up a PR to create (or update!) a mkdocs.yaml file for automatic TechDocs integration."
+spec:
+  owner: akiralane
+  type: service
+
+  parameters:
+    - title: Choose a target repository
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+    - title: Where is the documentation?
+      required:
+        - docsPath
+      properties:
+        docsPath:
+          title: Documentation folder location
+          type: string
+          description: The path to the folder containing the Markdown files that make up the documentation.
+          default: "docs"
+    - title: Give the docs a name
+      required:
+        - name
+        - description
+      properties:
+        name:
+          title: Name
+          type: string
+          description: The name of the project documentation (site_name)
+        description:
+          title: Description
+          type: string
+          description: A small description of the documentation (site_description)
+
+########################################################
+
+  steps:
+    - id: structure
+      name: Generating the docs directory structure as YAML
+      action: ons:github:createMkdocs
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        docsPath: ${{ parameters.docsPath }}
+
+    - id: template-mkdocs
+      name: Templating the mkdocs.yml file
+      action: fetch:template
+      input:
+        url: ./content
+        values:
+          name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
+          docsDir: ${{ parameters.docsPath }}
+          structure: ${{ steps['structure'].output.structure }}
+
+    - id: publish
+      name: Opening a PR to add the file
+      action: publish:github:pull-request
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        title: "Add mkdocs.yml"
+        branchName: integrate-techdocs
+        description: "Add a MkDocs configuration file for integration into TechDocs."
+
+    - id: refresh
+      name: Updating catalog entities from GitHub
+      action: ons:github:runProviders
+
+########################################################
+
+  output:
+    links:
+      - title: View pull request
+        url: ${{ steps.publish.output.remoteUrl }}

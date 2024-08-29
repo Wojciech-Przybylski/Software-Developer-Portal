@@ -1,0 +1,82 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: rag-gen-ai-template
+  title: Rag Gen AI template
+  description: "Set up a RAG GenAI application, automatically hosted on GCP"
+  tags:
+    - python
+    - genai
+    - gcp
+
+spec:
+  owner: spp-sml
+  type: service  
+  parameters:
+    - title: Name the project
+      required:
+        - name
+      properties:
+        name:
+          title: Project name
+          type: string
+          description: A human-readable name for the project.
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+    - title: Name the repo to store the source in (or choose an existing empty one).
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+  steps:
+    - id: template
+      name: Templating website content from filesystem
+      action: fetch:template
+      input:
+        url: https://github.com/ONS-Innovation/GenAI-RAG-Template
+        copyWithoutTemplating:
+        - .github/*
+        values:
+          name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
+          destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          owner: ${{ parameters.owner }}
+          repoUrl: ${{ parameters.repoUrl }}
+
+
+    - id: publish
+      name: Publishing to GitHub
+      action: publish:github
+      input:
+        allowedHosts:
+          - github.com
+        description: ${{ parameters.description }}
+        repoUrl: ${{ parameters.repoUrl }}
+        repoVisibility: 'public'
+        defaultBranch: 'main'
+        protectDefaultBranch: false
+    
+    - id: refresh
+      name: Updating catalog entities
+      action: ons:github:runProviders
+  
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps.register.output.entityRef }}

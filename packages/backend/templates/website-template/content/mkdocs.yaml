@@ -1,0 +1,9 @@
+site_name: Static Website Template
+site_description: Documentation for the template static website.
+
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core
+  

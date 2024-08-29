@@ -1,0 +1,58 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: create-s3-bucket
+  title: Create an S3 bucket
+  description: "Initialise a new empty S3 bucket"
+spec:
+  owner: akiralane
+  type: service
+
+  parameters:
+    - title: Set up the bucket
+      required: 
+        - bucket
+      properties:
+        bucket:
+          title: Bucket
+          type: string
+          description: Remember that S3 buckets are globally namespaced! Pick something unique.
+        acl:
+          title: Access
+          type: string
+          description: The Access Control List value.
+          default: private
+          enum:
+            - private
+            - public-read
+            - public-read-write
+            - authenticated-read
+
+########################################################
+
+  steps:
+    - id: fetch
+      name: Fetch content from filesystem
+      action: fetch:plain
+      input:
+        url: ./content
+
+    - id: createBucket
+      name: Create a new S3 bucket
+      action: ons:aws:s3:create
+      input:
+        bucket: ${{ parameters.bucket }}
+
+    # - id: uploadToS3
+    #   name: Upload to S3
+    #   action: roadiehq:aws:s3:cp
+    #   input:
+    #     region: us-east-1
+    #     bucket: ${{ parameters.bucket }}
+
+########################################################
+
+  output:
+    links:
+      - title: View ${{ parameters.bucket }}
+        url: https://s3.console.aws.amazon.com/s3/buckets/${{ parameters.bucket }}

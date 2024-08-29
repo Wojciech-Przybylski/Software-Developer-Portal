@@ -1,0 +1,15 @@
+site_name: ${{values.name | dump}}
+site_description: ${{values.description | dump}}
+
+nav:
+  - Home: index.md
+  - 'User Guide':
+    - 'Section A': 'lorem.md'
+    - 'Section B': 'lorem.md'
+  - About:
+    - 'License': 'lorem.md'
+    - 'Release Notes': 'lorem.md'
+
+plugins:
+  - techdocs-core
+  
